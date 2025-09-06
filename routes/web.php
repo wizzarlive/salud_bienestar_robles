@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('contacto', function () {
     return view('contacto');
@@ -17,5 +18,7 @@ Route::get('footer', function () {
 Route::get('nosotros', function () {
     return view('nosotros ');
 });
+
+Route::resource('users', UserController::class);
 
 
