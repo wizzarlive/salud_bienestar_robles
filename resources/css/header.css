@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --color-principal: #00B4B3;
+    --color-white: #ffffff;
+    --fuente: "Montserrat Alternates", sans-serif;
+}
+
+.header .block-1 {
+    background-color: var(--color-principal);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .block-1 p {
+    font-family: var(--fuente);
+    font-size: 12px;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.header .block-2 {
+    width: 100%;
+    max-width: 1290px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 97px;
+    align-items: center;
+}
+
+.header .block-2 input {
+    width: 629px;
+    border-radius: 5px;
+    border: solid 1px var(--color-principal);
+    height: 38px;
+    font-family: var(--fuente);
+    font-size: 12px;
+    font-weight: 600;
+    color: #AFAFAF;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.header .block-2 .icons {
+    display: flex;
+    gap: 40px;
+}
+
+/* Estilos generales */
+.header ul {
+    margin: auto;
+    max-width: 1290px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.header ul li {
+    position: relative;
+}
+
+.header ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: background 0.3s;
+    font-family: var(--fuente);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-white);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 180px;
+}
+
+.header ul li .submenu li a {
+    padding: 10px 15px;
+}
+
+.header ul li .submenu li a:hover {
+
+    background-color: var(--color-principal);
+
+}
+
+.header ul li:hover .submenu {
+    display: block;
+}
