@@ -2,41 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 
-Route::get('contacto', function () {
-    return view('contacto');
-});
+// Páginas estáticas
+Route::view('contacto', 'contacto');
+Route::view('header', 'header');
+Route::view('footer', 'footer');
+Route::view('nosotros', 'nosotros');
 
-Route::get('header', function () {
-    return view('header ');
-});
-
-Route::get('footer', function () {
-    return view('footer ');
-});
-
-Route::get('nosotros', function () {
-    return view('nosotros ');
-});
-
+// CRUD de usuarios
 Route::resource('users', UserController::class);
 
+// Dashboard protegido
 Route::middleware(['auth'])->get('/dashboard', function () {
     return view('dashboard');
 });
 
+// Autenticación (Laravel UI)
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle']);
-Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Login con Google (Socialite)
+Route::get('login/google', [LoginController::class, 'redirectToGoogle']);
+Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
