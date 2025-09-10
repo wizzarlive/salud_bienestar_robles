@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description'); //Mas de 255 caraceteres
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->string('slug')->unique();
-            $table->boolean('status')->default(true); //Activo por defecto
+            $table->boolean('status')->default(value: true); //Activo por defecto
             $table->timestamps();
         });
     }

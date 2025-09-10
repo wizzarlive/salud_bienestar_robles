@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('direction');
             $table->date('birthday');
             $table->string('img')->nullable(); //Campo puede quedar vacio
