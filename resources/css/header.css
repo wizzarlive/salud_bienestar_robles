@@ -100,3 +100,25 @@
 .header ul li:hover .submenu {
     display: block;
 }
+
+/* Dropdown de usuario */
+.user-dropdown {
+    position: relative;
+}
+
+.user-dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* sale hacia la derecha */
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.user-dropdown .submenu.show {
+    display: block; /* se muestra cuando tiene .show */
+}
+
