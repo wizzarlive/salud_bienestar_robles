@@ -35,6 +35,12 @@
                         </div>
                     </a>
 
+                    <a href="{{ route('login.facebook') }}">
+                        <div>
+                            <h1>Inicia con Facebook</h1>
+                        </div>
+                    </a>
+
                     <br><br>
                     <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <label for="remember">{{ __('Remember Me') }}</label><br><br>
