@@ -5,139 +5,116 @@
 @endsection
 
 @section('content')
-<div class="auth-container">
-    <div class="auth-card">
-        <div class="auth-header">{{ __('Register') }}</div>
+    <div class="body">
+        <div class="block">
+            <!-- Bloque 1 (Imagen) -->
+            <div class="block-1">
+                <img src="{{ Vite::asset('resources/img/autentificacion/logo.webp') }}" alt="logo">
+            </div>
 
-        <div class="auth-body">
-            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-                @csrf
+            <!-- Bloque 2 (Formulario) -->
+            <div class="block-2">
+                <h1>{{ __('REGÍSTRATE') }}</h1>
 
-                <!-- Name -->
-                <div class="form-group">
-                    <label for="name" class="form-label">{{ __('Name') }}</label>
-                    <input id="name" 
-                           type="text" 
-                           class="form-input @error('name') input-error @enderror" 
-                           name="name" 
-                           value="{{ old('name') }}" 
-                           required autocomplete="name" autofocus>
-                    @error('name')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    @csrf
 
-                <!-- Last Name -->
-                <div class="form-group">
-                    <label for="last_name" class="form-label">{{ __('Last Name') }}</label>
-                    <input id="last_name" 
-                           type="text" 
-                           class="form-input @error('last_name') input-error @enderror" 
-                           name="last_name" 
-                           value="{{ old('last_name') }}" 
-                           required>
-                    @error('last_name')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                    <!-- Nombre + Apellido -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">{{ __('Nombre') }}</label>
+                            <input id="name" type="text" class="@error('name') input-error @enderror" name="name"
+                                value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            @error('name')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
 
-                <!-- Email -->
-                <div class="form-group">
-                    <label for="email" class="form-label">{{ __('Email Address') }}</label>
-                    <input id="email" 
-                           type="email" 
-                           class="form-input @error('email') input-error @enderror" 
-                           name="email" 
-                           value="{{ old('email') }}" 
-                           required autocomplete="email">
-                    @error('email')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                        <div class="form-group">
+                            <label for="last_name">{{ __('Apellido') }}</label>
+                            <input id="last_name" type="text" class="@error('last_name') input-error @enderror"
+                                name="last_name" value="{{ old('last_name') }}" required>
+                            @error('last_name')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                    </div>
 
-                <!-- Phone -->
-                <div class="form-group">
-                    <label for="phone" class="form-label">{{ __('Phone') }}</label>
-                    <input id="phone" 
-                           type="text" 
-                           class="form-input @error('phone') input-error @enderror" 
-                           name="phone" 
-                           value="{{ old('phone') }}" 
-                           required>
-                    @error('phone')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                    <!-- Correo + Teléfono -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">{{ __('Correo electrónico') }}</label>
+                            <input id="email" type="email" class="@error('email') input-error @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email">
+                            @error('email')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
 
-                <!-- Direction -->
-                <div class="form-group">
-                    <label for="direction" class="form-label">{{ __('Direction') }}</label>
-                    <textarea id="direction" 
-                              class="form-input @error('direction') input-error @enderror" 
-                              name="direction" 
-                              required>{{ old('direction') }}</textarea>
+                        <div class="form-group">
+                            <label for="phone">{{ __('Teléfono') }}</label>
+                            <input id="phone" type="text" class="@error('phone') input-error @enderror" name="phone"
+                                value="{{ old('phone') }}" required>
+                            @error('phone')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <!-- Dirección -->
+                    <label for="direction">{{ __('Dirección') }}</label>
+                    <textarea id="direction" class="@error('direction') input-error @enderror" name="direction"
+                        required>{{ old('direction') }}</textarea>
                     @error('direction')
                         <span class="error-message"><strong>{{ $message }}</strong></span>
                     @enderror
-                </div>
 
-                <!-- Birthday -->
-                <div class="form-group">
-                    <label for="birthday" class="form-label">{{ __('Birthday') }}</label>
-                    <input id="birthday" 
-                           type="date" 
-                           class="form-input @error('birthday') input-error @enderror" 
-                           name="birthday" 
-                           value="{{ old('birthday') }}" 
-                           required>
-                    @error('birthday')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                    <!-- Fecha Nacimiento + Imagen -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthday">{{ __('Fecha de nacimiento') }}</label>
+                            <input id="birthday" type="date" class="@error('birthday') input-error @enderror"
+                                name="birthday" value="{{ old('birthday') }}" required>
+                            @error('birthday')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
 
-                <!-- Profile Image -->
-                <div class="form-group">
-                    <label for="img" class="form-label">{{ __('Profile Image') }}</label>
-                    <input id="img" 
-                           type="file" 
-                           class="form-input @error('img') input-error @enderror" 
-                           name="img">
-                    @error('img')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                        <div class="form-group">
+                            <label for="img">{{ __('Foto de perfil') }}</label>
+                            <input id="img" type="file" class="@error('img') input-error @enderror" name="img">
+                            @error('img')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                    </div>
 
-                <!-- Password -->
-                <div class="form-group">
-                    <label for="password" class="form-label">{{ __('Password') }}</label>
-                    <input id="password" 
-                           type="password" 
-                           class="form-input @error('password') input-error @enderror" 
-                           name="password" 
-                           required autocomplete="new-password">
-                    @error('password')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
+                    <!-- Contraseña + Confirmar -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">{{ __('Contraseña') }}</label>
+                            <input id="password" type="password" class="@error('password') input-error @enderror"
+                                name="password" required autocomplete="new-password">
+                            @error('password')
+                                <span class="error-message"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
 
-                <!-- Confirm Password -->
-                <div class="form-group">
-                    <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
-                    <input id="password-confirm" 
-                           type="password" 
-                           class="form-input" 
-                           name="password_confirmation" 
-                           required autocomplete="new-password">
-                </div>
+                        <div class="form-group">
+                            <label for="password-confirm">{{ __('Confirmar contraseña') }}</label>
+                            <input id="password-confirm" type="password" name="password_confirmation" required
+                                autocomplete="new-password">
+                        </div>
+                    </div>
 
-                <!-- Buttons -->
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">
-                        {{ __('Register') }}
-                    </button>
-                </div>
-            </form>
+                    <!-- Botón -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            {{ __('Registrar') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 @endsection
