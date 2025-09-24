@@ -15,13 +15,7 @@ Route::view('footer', 'footer');
 
 Route::resource('users', UserController::class);
 
-//Route::middleware(['auth'])->get('/dashboard', function () {
-//    return view('dashboard');
-//});
-
 Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
