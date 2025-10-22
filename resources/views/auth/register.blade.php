@@ -61,33 +61,6 @@
                         </div>
                     </div>
 
-                    <!-- Dirección -->
-                    <label for="direction">{{ __('Dirección') }}</label>
-                    <textarea id="direction" class="@error('direction') input-error @enderror" name="direction"
-                        required>{{ old('direction') }}</textarea>
-                    @error('direction')
-                        <span class="error-message"><strong>{{ $message }}</strong></span>
-                    @enderror
-
-                    <!-- Fecha Nacimiento + Imagen -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="birthday">{{ __('Fecha de nacimiento') }}</label>
-                            <input id="birthday" type="date" class="@error('birthday') input-error @enderror"
-                                name="birthday" value="{{ old('birthday') }}" required>
-                            @error('birthday')
-                                <span class="error-message"><strong>{{ $message }}</strong></span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="img">{{ __('Foto de perfil') }}</label>
-                            <input id="img" type="file" class="@error('img') input-error @enderror" name="img">
-                            @error('img')
-                                <span class="error-message"><strong>{{ $message }}</strong></span>
-                            @enderror
-                        </div>
-                    </div>
 
                     <!-- Contraseña + Confirmar -->
                     <div class="form-row">
