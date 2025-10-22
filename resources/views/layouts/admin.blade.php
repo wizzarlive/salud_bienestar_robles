@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel Administrativo</title>
-    @vite(['resources/css/admin.css'])
+    @vite(['resources/css/admin/admin.css'])
 </head>
 <body>
     <div class="dashboard-container">

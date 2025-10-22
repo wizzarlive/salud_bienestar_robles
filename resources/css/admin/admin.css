@@ -1,0 +1,31 @@
+/* Reset básico */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general del panel */
+body {
+    background-color: #E5FFFE;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estructura del dashboard */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 345px;
+    padding: 22px 25px;
+    background-color: #ffffff;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 50px 20px;
+}
