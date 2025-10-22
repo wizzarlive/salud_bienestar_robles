@@ -14,7 +14,7 @@
 .hero {
     width: 100%;
     height: 300px;
-    background-image: url('../img/contacto/banner.webp');
+    background-image: url('../../img/contacto/banner.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

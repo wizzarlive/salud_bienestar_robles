@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/nosotros.css" />
   <title>Nosotros</title>
-  @vite('resources/css/nosotros.css')
-  @vite('resources/css/header.css')
-  @vite('resources/css/footer.css')
+  @vite('resources/css/pages/nosotros.css')
+  @vite('resources/css/pages/header.css')
+  @vite('resources/css/pages/footer.css')
 </head>
 
 <body>

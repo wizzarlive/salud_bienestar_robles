@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    @vite('resources/css/contacto.css')
-    @vite('resources/css/header.css')
-    @vite('resources/css/footer.css')
+    @vite('resources/css/pages/contacto.css')
+    @vite('resources/css/pages/header.css')
+    @vite('resources/css/pages/footer.css')
 </head>
 
 <body>
