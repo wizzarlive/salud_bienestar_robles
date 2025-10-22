@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('Header')
+    @include('pages/Header')
 
     <header class="hero">
         <h1>CONTACTO</h1>
@@ -77,7 +77,7 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    @include('footer')
+    @include('pages/footer')
 </body>
 
 </html>

@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    @include('Header')
+    @include('pages/Header')
 
 
 
-    @include('footer')
+    @include('pages/footer')
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 
 <body>
 
-  @include('Header')
+  @include('pages/Header')
 
       <header class="hero">
         <h1>NOSOTROS</h1>
@@ -105,7 +105,7 @@
     </div>
   </section>
 
-    @include('Footer')
+    @include('pages/Footer')
 
 </body>
 

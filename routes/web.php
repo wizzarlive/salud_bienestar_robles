@@ -7,10 +7,8 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 Route::view('/', 'inicio');
-Route::view('contacto', 'contacto');
-Route::view('nosotros', 'nosotros');
-Route::view('header', 'header');
-Route::view('footer', 'footer');
+Route::view('contacto', 'pages/contacto');
+Route::view('nosotros', 'pages/nosotros');
 
 
 Route::resource('users', UserController::class);
@@ -22,3 +20,7 @@ Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallba
 
 Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
 Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::view('/layout-admin', 'layouts.admin');
+});
