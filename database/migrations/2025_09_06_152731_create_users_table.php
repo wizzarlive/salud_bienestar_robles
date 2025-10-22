@@ -18,11 +18,11 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();  // Fecha de verificación de correo.
             $table->string('phone', 20);
-            $table->string('whatsapp');
-            $table->text('direction');
-            $table->date('birthday');
+            $table->string('whatsapp')->nullable();
+            $table->text('direction')->nullable();
+            $table->date('birthday')->nullable();
             $table->string('img')->nullable();
-            $table->string('role')->default('client');
+            $table->string('role')->default(1);
             $table->rememberToken(); // Token para "recuérdame" en login.
             $table->timestamps();
         });

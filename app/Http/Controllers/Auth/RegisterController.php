@@ -63,15 +63,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $phone = preg_replace('/\D/', '', $data['phone']); // elimina caracteres no numéricos
+        $whatsappLink = "https://wa.me/51" . $phone; // 51 = código de país Perú
+
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
-            'direction' => $data['direction'],
-            'birthday' => $data['birthday'],
-            'img' => $data['img'] ?? null, // si no mandas imagen queda null
-            'role' => 'client', // asigna por defecto
+            'whatsapp' => $whatsappLink,
+            'role' => 1, // asigna por defecto
             'password' => Hash::make($data['password']),
         ]);
     }
